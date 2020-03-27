@@ -3,11 +3,12 @@ package codility;
 public class TapeEquilibrium {
 
     public static void main(String[] args){
-        int A[] = {2,3,1,4,5};
+        int A[] = {3,1,2,4,3};
         System.out.println("A min value -> "+  solution( A ));
     }
 
-    // result n*n 결과다. 문제가 있음. 속도 개선.
+    // result n 100% 나옴. 이중 for 말고, n을 분리해서 처리하는 방법 생각할 것,
+
     public static int solution(int[] A) {
         // write your code in Java SE 8
         int aLen = A.length;
@@ -16,25 +17,26 @@ public class TapeEquilibrium {
         int resultValue = 0;
 
         // 0< P < aLen
-
-        for(int p = 1 ; p < aLen ; p ++){
-            int difference = 0;
-            for(int i = 0; i < aLen ; i++){
-                if(i >= p){
-                    difference = difference - A[i];
-                }else{
-                    difference = difference + A[i];
-                }
-            }
-            difference = Math.abs(difference);
+        // a-b
+        int a = 0;
+        int b = 0;
+        for (int i = 0; i < aLen; i++) {
+            b = b + A[i];
+        }
+        for(int p = 0 ; p <= aLen-2 ; p++){
+            int ap = A[p];
+            a = a + ap;
+            b = b - ap;
+            int ab = Math.abs(a - b);
             if(resultInit){
-                if(resultValue > difference){
-                    resultValue = difference;
+                if(resultValue > ab){
+                    resultValue = ab;
                 }
             }else{
                 resultInit = true;
-                resultValue = difference;
+                resultValue = ab;
             }
+
         }
         return resultValue;
     }
