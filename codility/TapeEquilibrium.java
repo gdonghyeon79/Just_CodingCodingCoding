@@ -8,7 +8,7 @@ public class TapeEquilibrium {
     }
 
     // result n 100% 나옴. 이중 for 말고, n을 분리해서 처리하는 방법 생각할 것,
-
+    // 2개인 경우 for
     public static int solution(int[] A) {
         // write your code in Java SE 8
         int aLen = A.length;
