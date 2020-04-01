@@ -5,7 +5,8 @@ import java.util.*;
 public class ArrayNplus1 {
 
     public static void main(String[] args){
-        solution( )
+        int A[] = {2,3,1,4,5};
+        solution(A );
     }
 
     // 첫 50%,
