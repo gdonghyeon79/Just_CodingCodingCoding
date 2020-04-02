@@ -6,7 +6,11 @@ public class GeonomicRangeQuery {
         String S = "AC";
         int[] P = {0, 0, 1};
         int[] Q = {0, 1, 1};
-        System.out.println(solution(S, P, Q));
+
+        int[] result = solution(S, P, Q);
+        for(int i=0; i<result.length;i++) {
+            System.out.println(result[i]);
+        }
     }
     // 첫 제출. 50%
     public static int[] solution(String S, int[] P, int[] Q) {
@@ -17,7 +21,8 @@ public class GeonomicRangeQuery {
         int[] result = new int[P_length];
 
         for(int K=0; K<P_length; K++){
-            if(K >= S_length){
+            System.out.println(K);
+            if(Q[K] >= S_length){
                 break;
             }
             String tmpS = S.substring(P[K],Q[K]+1);
