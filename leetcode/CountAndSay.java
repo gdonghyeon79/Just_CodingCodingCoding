@@ -4,7 +4,7 @@ public class CountAndSay {
     public static void main(String[] args) {
         int n =1;
         if(n<=0){
-            return "-1";
+            System.out.println("-1");
         }
 
         String result = "1";
