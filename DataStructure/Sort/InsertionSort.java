@@ -27,8 +27,9 @@ public class InsertionSort {
         int[] arr = {8,5,6,2,4};
 
         for(int i=1; i<arr.length;i++){ // 비교 기준 값 위치
+            int pVal = arr[i];
             for(int j=i; j>0;j--){  // 기준값 비교할 대상
-                if(arr[j-1] > arr[j]){  // 기준 값 대비 크면 자리 이동.
+                if(arr[j-1] > pVal){  // 기준 값 대비 크면 자리 이동.
                     int tmp = arr[j];
                     arr[j] = arr[j-1];
                     arr[j-1]= tmp;
